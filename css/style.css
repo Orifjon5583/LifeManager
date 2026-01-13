@@ -1,0 +1,196 @@
+/* 1. ASOSIY SOZLAMALAR */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --sidebar-width: 280px;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --dark: #0f172a;
+    --bg-light: #f8fafc;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* 2. SIDEBAR - Rasmda ko'ringandek chap tomon */
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: var(--dark);
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 30px 20px;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 50px;
+    padding-left: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 20px;
+    color: #94a3b8;
+    text-decoration: none;
+    border-radius: 16px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-link i {
+    font-size: 20px;
+    width: 24px;
+    text-align: center;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+.nav-link.active {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+}
+
+/* 3. ASOSIY KONTENT */
+.main-content {
+    margin-left: var(--sidebar-width);
+    padding: 40px;
+    min-height: 100vh;
+}
+
+/* 4. KARTALAR (CARDS) - Hisobotlardagi kabi */
+.stat-card {
+    background: white;
+    padding: 30px;
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(241, 245, 249, 1);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+/* 5. GRAFIK KONTEYNERI (HISOBOTLAR UCHUN) */
+.chart-container {
+    background: white;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+    margin-bottom: 35px;
+    height: 450px; /* Balandlikni nazorat qilish */
+    width: 100%;
+    position: relative;
+}
+
+/* 6. INPUT VA FORMALAR - Vazifalar va Moliya uchun */
+input, select {
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 16px;
+    border: 2px solid #f1f5f9;
+    background: #f8fafc;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: var(--primary);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+button {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* 7. GRID TIZIMI */
+.report-grid {
+    display: grid;
+    grid-template-cols: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* 8. PROGRES BAR VA RO'YXATLAR */
+.progress-bar {
+    height: 10px;
+    background: #f1f5f9;
+    border-radius: 20px;
+    margin: 15px 0;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--primary);
+    border-radius: 20px;
+}
+
+.expense-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.expense-item:last-child {
+    border-bottom: none;
+}
+
+/* 9. MOBILE NAVIGATION - Telefonlar uchun */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 15px;
+    border-top: 1px solid #e2e8f0;
+    justify-content: space-around;
+    z-index: 2000;
+}
+
+/* 10. RESPONSIVE (MOSLASHUVCHANLIK) */
+@media (max-width: 1024px) {
+    .sidebar { width: 80px; padding: 20px 10px; }
+    .nav-link span, .logo { display: none; }
+    .main-content { margin-left: 80px; }
+}
+
+@media (max-width: 768px) {
+    .sidebar { display: none; }
+    .main-content { margin-left: 0; padding: 25px; padding-bottom: 100px; }
+    .mobile-nav { display: flex; }
+    .chart-container { height: 350px; }
+}

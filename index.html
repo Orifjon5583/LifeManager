@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard | Nexus Life Manager</title>
+    <script src="https://cdn.tailwindcss.org"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo italic underline">LifeManager</div>
+        <nav>
+            <a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Dashboard</a>
+            <a href="tasks.html" class="nav-link"><i class="fas fa-tasks"></i> Vazifalar</a>
+            <a href="finance.html" class="nav-link"><i class="fas fa-wallet"></i> Moliya</a>
+            <a href="reports.html" class="nav-link"><i class="fas fa-chart-pie"></i> Hisobotlar</a>
+        </nav>
+    </aside>
+
+    <!-- ASOSIY QISM -->
+    <main class="main-content">
+        <header class="mb-10 flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-slate-800">Xush kelibsiz, Bekzod!</h1>
+            <div class="flex items-center gap-4 bg-white p-2 px-4 rounded-2xl shadow-sm border">
+                <div class="text-right"><p class="text-xs text-slate-400">ID: #8872</p><p class="text-sm font-bold">Ali Valiyev</p></div>
+                <img src="https://ui-avatars.com/api/?name=Ali&background=2563eb&color=fff" class="w-10 h-10 rounded-full">
+            </div>
+        </header>
+
+        <!-- STATISTIKA KARTALARI -->
+        <div class="report-grid mb-10">
+            <div class="stat-card border-t-4 border-blue-500">
+                <h4 class="text-gray-400 text-xs font-bold uppercase">Bugungi vazifalar</h4>
+                <h2 class="text-3xl font-extrabold mt-2">12 ta</h2>
+                <p class="text-xs text-blue-500 mt-2 font-medium"><i class="fas fa-arrow-up"></i> 3 tasi shoshilinch</p>
+            </div>
+            <div class="stat-card border-t-4 border-green-500">
+                <h4 class="text-gray-400 text-xs font-bold uppercase">Joriy Balans</h4>
+                <h2 class="text-3xl font-extrabold mt-2 text-green-600">4,250,000</h2>
+                <p class="text-xs text-slate-400 mt-2">UZS (so'mda)</p>
+            </div>
+            <div class="stat-card border-t-4 border-red-500">
+                <h4 class="text-gray-400 text-xs font-bold uppercase">Kutilayotgan Qarzlar</h4>
+                <h2 class="text-3xl font-extrabold mt-2 text-red-500">800,000</h2>
+                <p class="text-xs text-slate-400 mt-2">Qaytarish muddati yaqin</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- SO'NGGI HARAKATLAR -->
+            <div class="stat-card">
+                <h3 class="font-bold text-lg mb-6 flex items-center gap-2"><i class="fas fa-history text-blue-500"></i> So'nggi harakatlar</h3>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center p-3 hover:bg-slate-50 rounded-xl transition">
+                        <span class="text-slate-600">Tushlik xarajati</span>
+                        <span class="font-bold text-red-500">-35,000 UZS</span>
+                    </div>
+                    <div class="flex justify-between items-center p-3 hover:bg-slate-50 rounded-xl transition">
+                        <span class="text-slate-600">Mijozdan to'lov</span>
+                        <span class="font-bold text-green-500">+1,500,000 UZS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TELEGRAM INTEGRATSIYA -->
+            <div class="stat-card bg-slate-900 text-white">
+                <h3 class="font-bold text-lg mb-4 text-blue-400">Telegram Bot</h3>
+                <p class="text-sm opacity-70 mb-6">Bot orqali vazifa qo'shish va eslatmalar olish faol holatda.</p>
+                <div class="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/10">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=t.me/your_bot" class="rounded-lg">
+                    <div>
+                        <p class="text-xs opacity-50 uppercase">Bot manzili:</p>
+                        <p class="font-bold">@NexusManagerBot</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
