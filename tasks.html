@@ -1,54 +1,26 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-    <meta charset="UTF-8">
-    <title>Vazifalar | Nexus</title>
-    <script src="https://cdn.tailwindcss.org"></script>
+    <link rel="stylesheet" href="css/tasks.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <aside class="sidebar">
-        <div class="logo italic underline">LifeManager</div>
-        <nav>
-            <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Dashboard</a>
-            <a href="tasks.html" class="nav-link active"><i class="fas fa-tasks"></i> Vazifalar</a>
-            <a href="finance.html" class="nav-link"><i class="fas fa-wallet"></i> Moliya</a>
-            <a href="reports.html" class="nav-link"><i class="fas fa-chart-pie"></i> Hisobotlar</a>
-        </nav>
-    </aside>
-
-    <main class="main-content">
-        <h1 class="text-3xl font-bold text-slate-800 mb-10">Vazifalar va Ish vaqti</h1>
-
-        <!-- VAZIFA QO'SHISH -->
-        <div class="stat-card mb-8">
-            <h3 class="font-bold mb-6 text-blue-600">Yangi vazifa rejalashtirish</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <input type="text" placeholder="Vazifa nomi..." class="p-4 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-500">
-                <input type="datetime-local" class="p-4 bg-slate-50 border border-slate-200 rounded-2xl outline-none">
-                <select class="p-4 bg-slate-50 border border-slate-200 rounded-2xl outline-none">
-                    <option>Muhimlik: Oddiy</option>
-                    <option class="text-red-500 font-bold">Muhim / Shoshilinch</option>
-                </select>
-                <button class="bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition">Vazifani qo'shish</button>
-            </div>
+    <main class="content">
+        <h1>Vazifalar</h1>
+        <div class="card add-task">
+            <input type="text" placeholder="Yangi vazifa...">
+            <input type="datetime-local">
+            <button>QO'SHISH</button>
         </div>
-
-        <!-- VAZIFALAR RO'YXATI -->
-        <div class="space-y-4">
-            <!-- Shoshilinch vazifa -->
-            <div class="stat-card flex justify-between items-center border-l-8 border-red-500 py-4 hover:translate-x-2 transition cursor-pointer">
-                <div>
-                    <h4 class="font-bold text-lg">Loyiha kodini topshirish</h4>
-                    <p class="text-sm text-slate-400"><i class="far fa-clock mr-1"></i> Bugun: 17:30 gacha | Telegramda eslatiladi</p>
-                </div>
-                <div class="flex gap-2">
-                    <button class="w-10 h-10 bg-green-50 text-green-600 rounded-full hover:bg-green-600 hover:text-white transition"><i class="fas fa-check"></i></button>
-                    <button class="w-10 h-10 bg-slate-50 text-slate-400 rounded-full hover:bg-red-500 hover:text-white transition"><i class="fas fa-trash"></i></button>
-                </div>
-            </div>
+        <div class="card task-item">
+            <div class="info"><h4>Dizayn topshirish</h4><p>Bugun 18:00</p></div>
+            <i class="fab fa-telegram text-blue-500"></i>
         </div>
     </main>
+    <nav class="bottom-nav">
+        <a href="index.html"><i class="fas fa-home"></i></a>
+        <a href="tasks.html" class="active"><i class="fas fa-list"></i></a>
+        <a href="finance.html"><i class="fas fa-wallet"></i></a>
+        <a href="reports.html"><i class="fas fa-chart-pie"></i></a>
+    </nav>
 </body>
-</html>
