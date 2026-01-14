@@ -6,10 +6,29 @@
     --primary: #2563eb;
     --primary-hover: #1d4ed8;
     --dark: #0f172a;
+    --sidebar-bg: #0f172a;
+    /* Default Dark Sidebar */
     --bg-light: #f8fafc;
     --text-main: #1e293b;
     --text-muted: #64748b;
+    --card-bg: #ffffff;
+    --input-bg: #f8fafc;
+    --border-color: #f1f5f9;
     --shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+body.dark-mode {
+    --bg-light: #0f172a;
+    --sidebar-bg: #020617;
+    /* Darker Sidebar for contrast */
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --card-bg: #1e293b;
+    --input-bg: #334155;
+    --border-color: #334155;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    background-color: var(--bg-light);
+    color: var(--text-main);
 }
 
 * {
@@ -29,12 +48,14 @@ body {
 .sidebar {
     width: var(--sidebar-width);
     height: 100vh;
-    background: var(--dark);
+    background: var(--sidebar-bg);
     position: fixed;
     left: 0;
     top: 0;
     padding: 30px 20px;
     z-index: 1000;
+    border-right: 1px solid var(--border-color);
+    /* Separator line */
 }
 
 .logo {
@@ -86,12 +107,13 @@ body {
 
 /* 4. KARTALAR (CARDS) - Hisobotlardagi kabi */
 .stat-card {
-    background: white;
+    background: var(--card-bg);
+    color: var(--text-main);
     padding: 30px;
     border-radius: 28px;
     box-shadow: var(--shadow);
-    border: 1px solid rgba(241, 245, 249, 1);
-    transition: transform 0.3s ease;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .stat-card:hover {
@@ -100,7 +122,8 @@ body {
 
 /* 5. GRAFIK KONTEYNERI (HISOBOTLAR UCHUN) */
 .chart-container {
-    background: white;
+    background: var(--card-bg);
+    color: var(--text-main);
     padding: 30px;
     border-radius: 30px;
     box-shadow: var(--shadow);
@@ -109,6 +132,7 @@ body {
     /* Balandlikni nazorat qilish */
     width: 100%;
     position: relative;
+    border: 1px solid var(--border-color);
 }
 
 /* 6. INPUT VA FORMALAR - Vazifalar va Moliya uchun */
@@ -117,8 +141,9 @@ select {
     width: 100%;
     padding: 14px 20px;
     border-radius: 16px;
-    border: 2px solid #f1f5f9;
-    background: #f8fafc;
+    border: 2px solid var(--border-color);
+    background: var(--input-bg);
+    color: var(--text-main);
     font-family: inherit;
     font-size: 15px;
     outline: none;
@@ -128,7 +153,7 @@ select {
 input:focus,
 select:focus {
     border-color: var(--primary);
-    background: white;
+    background: var(--card-bg);
     box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
 }
 
@@ -163,7 +188,7 @@ button {
     display: flex;
     justify-content: space-between;
     padding: 15px 0;
-    border-bottom: 1px solid #f1f5f9;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .expense-item:last-child {
@@ -177,9 +202,9 @@ button {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: white;
+    background: var(--card-bg);
     padding: 15px;
-    border-top: 1px solid #e2e8f0;
+    border-top: 1px solid var(--border-color);
     justify-content: space-around;
     z-index: 2000;
 }
@@ -227,17 +252,18 @@ button {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #f8fafc;
+    background: var(--bg-light);
+    color: var(--text-main);
 }
 
 .auth-card {
-    background: white;
+    background: var(--card-bg);
     padding: 40px;
     width: 100%;
     max-width: 440px;
     border-radius: 32px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(241, 245, 249, 1);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
 }
 
 .auth-header {
@@ -284,16 +310,25 @@ button {
     /* Spacing for icon */
     font-size: 16px;
     border-radius: 18px;
-    border: 2px solid #f1f5f9;
-    background: #f8fafc;
+    border: 2px solid var(--border-color);
+    background: var(--input-bg);
+    color: var(--text-main);
     transition: all 0.3s ease;
     outline: none;
 }
 
 .auth-input:focus {
     border-color: var(--primary);
-    background: white;
+    background: var(--card-bg);
     box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+/* 12. UTILITIES (Dark Mode Adaptive) */
+.adaptive-bg {
+    background: var(--input-bg);
+    /* Matches slate-50 (light) / slate-700 (dark) */
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
 }
 
 .auth-btn {

@@ -1,37 +1,49 @@
 <!DOCTYPE html>
 <html lang="uz">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hisobotlar |  Life Manager</title>
-    
+    <title>Hisobotlar | Life Manager</title>
+
     <!-- Ikonkalar va Tailwind -->
     <script src="https://cdn.tailwindcss.org"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Chart.js Kutubxonasi -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
+
     <!-- CSS Faylimiz -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
     <!-- SIDEBAR -->
     <aside class="sidebar">
         <div class="logo italic underline">LifeManager</div>
         <nav>
-            <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Dashboard</a>
-            <a href="tasks.html" class="nav-link"><i class="fas fa-tasks"></i> Vazifalar</a>
-            <a href="finance.html" class="nav-link"><i class="fas fa-wallet"></i> Moliya</a>
-            <a href="reports.html" class="nav-link active"><i class="fas fa-chart-pie"></i> Hisobotlar</a>
+            <a href="index.html" class="nav-link"><i class="fas fa-home"></i> <span
+                    data-i18n="dashboard">Dashboard</span></a>
+            <a href="tasks.html" class="nav-link"><i class="fas fa-tasks"></i> <span
+                    data-i18n="tasks">Vazifalar</span></a>
+            <a href="finance.html" class="nav-link"><i class="fas fa-wallet"></i> <span
+                    data-i18n="finance">Moliya</span></a>
+            <a href="reports.html" class="nav-link active"><i class="fas fa-chart-pie"></i> <span
+                    data-i18n="reports">Hisobotlar</span></a>
         </nav>
+
+        <div style="position: absolute; bottom: 30px; left: 20px; width: calc(100% - 40px);">
+            <a href="profile.html" class="nav-link" style="background: rgba(255, 255, 255, 0.05); color: white;">
+                <i class="fas fa-user-circle"></i> <span data-i18n="profile">Profil</span>
+            </a>
+        </div>
     </aside>
 
     <!-- ASOSIY QISM -->
     <main class="main-content">
         <header class="mb-10 flex justify-between items-center">
-            <h1 class="text-3xl font-bold text-slate-800">Tahliliy Hisobotlar</h1>
+            <h1 class="text-3xl font-bold" data-i18n="analytical_reports">Tahliliy Hisobotlar</h1>
             <div class="text-sm font-medium text-slate-500 bg-white px-4 py-2 rounded-xl shadow-sm">
                 Yanvar 2024
             </div>
@@ -44,7 +56,7 @@
 
         <!-- STATISTIKA GRIDI -->
         <div class="report-grid">
-            
+
             <!-- Unumdorlik Card -->
             <div class="stat-card border-t-4 border-blue-500">
                 <h4>Haftalik unumdorlik</h4>
@@ -52,7 +64,8 @@
                 <div class="progress-bar">
                     <div class="progress-fill" style="width: 85%;"></div>
                 </div>
-                <p class="mt-4 text-sm text-slate-500">Vazifalaringizning ko'p qismi o'z vaqtida bajarildi. Ajoyib natija!</p>
+                <p class="mt-4 text-sm text-slate-500">Vazifalaringizning ko'p qismi o'z vaqtida bajarildi. Ajoyib
+                    natija!</p>
             </div>
 
             <!-- Xarajatlar Card -->
@@ -60,7 +73,8 @@
                 <h4>Xarajatlar Tahlili</h4>
                 <div class="mt-4 space-y-1">
                     <div class="expense-item">
-                        <span class="text-slate-600"><i class="fas fa-utensils mr-2 text-orange-400"></i> Oziq-ovqat</span>
+                        <span class="text-slate-600"><i class="fas fa-utensils mr-2 text-orange-400"></i>
+                            Oziq-ovqat</span>
                         <span class="font-bold">45%</span>
                     </div>
                     <div class="expense-item">
@@ -68,7 +82,8 @@
                         <span class="font-bold">20%</span>
                     </div>
                     <div class="expense-item">
-                        <span class="text-slate-600"><i class="fas fa-gamepad mr-2 text-purple-400"></i> O'yin-kulgi</span>
+                        <span class="text-slate-600"><i class="fas fa-gamepad mr-2 text-purple-400"></i>
+                            O'yin-kulgi</span>
                         <span class="font-bold">35%</span>
                     </div>
                 </div>
@@ -86,6 +101,8 @@
     </nav>
 
     <!-- JS Faylimiz -->
+    <script src="js/translations.js"></script>
     <script src="js/app.js"></script>
 </body>
+
 </html>

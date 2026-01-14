@@ -20,17 +20,27 @@
     <aside class="sidebar">
         <div class="logo italic underline">LifeManager</div>
         <nav>
-            <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Dashboard</a>
-            <a href="tasks.html" class="nav-link active"><i class="fas fa-tasks"></i> Vazifalar</a>
-            <a href="finance.html" class="nav-link"><i class="fas fa-wallet"></i> Moliya</a>
-            <a href="reports.html" class="nav-link"><i class="fas fa-chart-pie"></i> Hisobotlar</a>
+            <a href="index.html" class="nav-link"><i class="fas fa-home"></i> <span
+                    data-i18n="dashboard">Dashboard</span></a>
+            <a href="tasks.html" class="nav-link active"><i class="fas fa-tasks"></i> <span
+                    data-i18n="tasks">Vazifalar</span></a>
+            <a href="finance.html" class="nav-link"><i class="fas fa-wallet"></i> <span
+                    data-i18n="finance">Moliya</span></a>
+            <a href="reports.html" class="nav-link"><i class="fas fa-chart-pie"></i> <span
+                    data-i18n="reports">Hisobotlar</span></a>
         </nav>
+
+        <div style="position: absolute; bottom: 30px; left: 20px; width: calc(100% - 40px);">
+            <a href="profile.html" class="nav-link" style="background: rgba(255, 255, 255, 0.05); color: white;">
+                <i class="fas fa-user-circle"></i> <span data-i18n="profile">Profil</span>
+            </a>
+        </div>
     </aside>
 
     <!-- ASOSIY QISM -->
     <main class="main-content">
         <header class="mb-10 flex justify-between items-center">
-            <h1 class="text-3xl font-bold text-slate-800">Vazifalar</h1>
+            <h1 class="text-3xl font-bold" data-i18n="task_manager">Vazifalar Menejeri</h1>
             <button
                 class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl font-bold shadow-lg shadow-blue-200 transition flex items-center gap-2">
                 <i class="fas fa-plus"></i> Yangi
@@ -42,25 +52,25 @@
             <!-- Yangi vazifa qo'shish (chapda yoki tepadagi forma) -->
             <div class="lg:col-span-1">
                 <div class="stat-card sticky top-8">
-                    <h4 class="text-xl font-bold text-slate-800 mb-6">Yangi vazifa</h4>
+                    <h4 class="text-xl font-bold mb-6">Yangi vazifa</h4>
                     <div class="space-y-4">
                         <div>
                             <label class="text-sm font-medium text-slate-600 mb-1 block">Nomi</label>
-                            <input type="text" placeholder="Vazifa nomi..." class="w-full">
+                            <input type="text" id="taskName" placeholder="Vazifa nomi..." class="w-full">
                         </div>
                         <div>
                             <label class="text-sm font-medium text-slate-600 mb-1 block">Muddat</label>
-                            <input type="datetime-local" class="w-full">
+                            <input type="datetime-local" id="taskDate" class="w-full">
                         </div>
                         <div>
                             <label class="text-sm font-medium text-slate-600 mb-1 block">Muhimlik</label>
-                            <select class="w-full">
+                            <select id="taskPriority" class="w-full">
                                 <option>O'rtacha</option>
                                 <option>Yuqori</option>
                                 <option>Past</option>
                             </select>
                         </div>
-                        <button
+                        <button id="taskAddBtn"
                             class="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-xl font-bold shadow-lg shadow-blue-200 mt-2">
                             QO'SHISH
                         </button>
@@ -69,7 +79,7 @@
             </div>
 
             <!-- Vazifalar ro'yxati -->
-            <div class="lg:col-span-2 space-y-4">
+            <div id="taskList" class="lg:col-span-2 space-y-4">
 
                 <h4 class="font-bold text-slate-600 mb-2">Bugun</h4>
 
@@ -80,7 +90,7 @@
                         <button
                             class="w-6 h-6 rounded-full border-2 border-slate-300 hover:border-blue-500 hover:bg-blue-50 transition"></button>
                         <div>
-                            <h4 class="font-bold text-slate-800 group-hover:text-blue-600 transition">Dizayn topshirish
+                            <h4 class="font-bold group-hover:text-blue-600 transition">Dizayn topshirish
                             </h4>
                             <p class="text-xs text-slate-500 flex items-center gap-2">
                                 <i class="far fa-clock"></i> Bugun, 18:00
@@ -104,7 +114,7 @@
                         <button
                             class="w-6 h-6 rounded-full border-2 border-slate-300 hover:border-blue-500 hover:bg-blue-50 transition"></button>
                         <div>
-                            <h4 class="font-bold text-slate-800 group-hover:text-blue-600 transition">Mijoz bilan
+                            <h4 class="font-bold group-hover:text-blue-600 transition">Mijoz bilan
                                 uchrashuv</h4>
                             <p class="text-xs text-slate-500 flex items-center gap-2">
                                 <i class="far fa-clock"></i> Ertaga, 10:00
@@ -131,6 +141,7 @@
     </nav>
 
     <!-- JS Faylimiz -->
+    <script src="js/translations.js"></script>
     <script src="js/app.js"></script>
 </body>
 

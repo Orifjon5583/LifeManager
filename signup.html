@@ -14,18 +14,19 @@
 
     <div class="auth-card">
         <div class="auth-header">
-            <h1 class="auth-title" style="font-size: 24px; font-style: normal;">Yangi hisob yaratish</h1>
-            <p style="color: #64748b; font-size: 14px;">Barcha ma'lumotlarni to'ldiring</p>
+            <h1 class="auth-title" style="font-size: 24px; font-style: normal;" data-i18n="signup_title">Yangi hisob
+                yaratish</h1>
+            <p style="color: #64748b; font-size: 14px;" data-i18n="app_desc">Barcha ma'lumotlarni to'ldiring</p>
         </div>
 
         <form class="space-y-4" action="login.html">
             <div class="form-group">
-                <label class="form-label">Ismingiz</label>
+                <label class="form-label" data-i18n="full_name">Ismingiz</label>
                 <input type="text" placeholder="Ism Familiya" class="auth-input" style="padding-left: 16px !important;">
             </div>
 
             <div class="form-group">
-                <label class="form-label">Email</label>
+                <label class="form-label" data-i18n="email">Email</label>
                 <div class="input-wrapper">
                     <div class="input-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -40,7 +41,7 @@
             </div>
 
             <div class="form-group">
-                <label class="form-label">Parol</label>
+                <label class="form-label" data-i18n="password">Parol</label>
                 <div class="input-wrapper">
                     <div class="input-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -54,7 +55,7 @@
             </div>
 
             <div class="form-group">
-                <label class="form-label">Parolni tasdiqlash</label>
+                <label class="form-label" data-i18n="confirm_password">Parolni tasdiqlash</label>
                 <div class="input-wrapper">
                     <div class="input-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -67,17 +68,19 @@
                 </div>
             </div>
 
-            <button type="submit" class="auth-btn" style="margin-top: 24px;">
+            <button type="submit" class="auth-btn" style="margin-top: 24px;" data-i18n="signup_button">
                 RO'YXATDAN O'TISH
             </button>
         </form>
 
         <div class="auth-footer">
-            Hisobingiz bormi? <a href="login.html"
-                style="color: #2563eb; font-weight: 700; text-decoration: none;">Kirish</a>
+            <span data-i18n="have_account">Hisobingiz bormi?</span> <a href="login.html"
+                style="color: #2563eb; font-weight: 700; text-decoration: none;" data-i18n="login_link">Kirish</a>
         </div>
     </div>
 
+    <script src="js/translations.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
