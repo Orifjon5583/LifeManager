@@ -1,23 +1,116 @@
+<!DOCTYPE html>
+<html lang="uz">
+
 <head>
-    <link rel="stylesheet" href="css/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Life Manager</title>
+
+    <!-- Ikonkalar va Tailwind -->
+    <script src="https://cdn.tailwindcss.org"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS Faylimiz -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <main class="content">
-        <div class="header"><h1>Dashboard</h1></div>
-        <div class="card balance-card">
-            <p>Joriy Balans</p>
-            <h2>5,450,000 UZS</h2>
-        </div>
-        <div class="card">
-            <h3>Bugungi holat</h3>
-            <p>Vazifalar: 12 ta</p>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo italic underline">LifeManager</div>
+        <nav>
+            <a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Dashboard</a>
+            <a href="tasks.html" class="nav-link"><i class="fas fa-tasks"></i> Vazifalar</a>
+            <a href="finance.html" class="nav-link"><i class="fas fa-wallet"></i> Moliya</a>
+            <a href="reports.html" class="nav-link"><i class="fas fa-chart-pie"></i> Hisobotlar</a>
+        </nav>
+    </aside>
+
+    <!-- ASOSIY QISM -->
+    <main class="main-content">
+        <header class="mb-10 flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-slate-800">Dashboard</h1>
+            <div class="text-sm font-medium text-slate-500 bg-white px-4 py-2 rounded-xl shadow-sm">
+                Xush kelibsiz!
+            </div>
+        </header>
+
+        <!-- DASHBOARD GRIDI -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- Balance Card -->
+            <div class="stat-card bg-gradient-to-r from-blue-600 to-blue-500 text-white border-none">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-blue-100 text-sm font-medium mb-1">Joriy Balans</p>
+                        <h2 class="text-4xl font-bold">5,450,000 <span class="text-lg opacity-80">UZS</span></h2>
+                    </div>
+                    <div class="p-3 bg-white/20 rounded-xl backdrop-blur-sm">
+                        <i class="fas fa-wallet text-2xl"></i>
+                    </div>
+                </div>
+                <div class="mt-8 flex gap-3">
+                    <button
+                        class="flex-1 bg-white/20 hover:bg-white/30 text-white py-2 rounded-lg text-sm font-medium transition backdrop-blur-sm">
+                        <i class="fas fa-plus mr-2"></i> Kirim
+                    </button>
+                    <button
+                        class="flex-1 bg-white/20 hover:bg-white/30 text-white py-2 rounded-lg text-sm font-medium transition backdrop-blur-sm">
+                        <i class="fas fa-minus mr-2"></i> Chiqim
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bugungi holat -->
+            <div class="stat-card">
+                <div class="flex justify-between items-center mb-6">
+                    <h4 class="text-xl font-bold text-slate-800">Bugungi holat</h4>
+                    <span class="text-xs font-bold text-green-600 bg-green-100 px-3 py-1 rounded-full">Faol</span>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-500">Bajarilgan</p>
+                                <h3 class="font-bold text-slate-800">8 ta vazifa</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-600">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-500">Kutilmoqda</p>
+                                <h3 class="font-bold text-slate-800">4 ta vazifa</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </main>
-    <nav class="bottom-nav">
-        <a href="index.html" class="active"><i class="fas fa-home"></i></a>
-        <a href="tasks.html"><i class="fas fa-list"></i></a>
-        <a href="finance.html"><i class="fas fa-wallet"></i></a>
-        <a href="reports.html"><i class="fas fa-chart-pie"></i></a>
+
+    <!-- MOBIL NAVIGATSIYA -->
+    <nav class="mobile-nav">
+        <a href="index.html" class="text-blue-600"><i class="fas fa-home text-xl"></i></a>
+        <a href="tasks.html" class="text-slate-400"><i class="fas fa-tasks text-xl"></i></a>
+        <a href="finance.html" class="text-slate-400"><i class="fas fa-wallet text-xl"></i></a>
+        <a href="reports.html" class="text-slate-400"><i class="fas fa-chart-pie text-xl"></i></a>
     </nav>
+
+    <!-- JS Faylimiz -->
+    <script src="js/app.js"></script>
 </body>
+
+</html>
